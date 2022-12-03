@@ -1,0 +1,58 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import './sassCss/header';
+@import './sassCss/side_content';
+@import './sassCss/section';
+
+
+
+// the main css for all
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Roboto, Arial, sans-serif;
+}
+
+:root {
+    --back-color: #0f0f0f;
+    --white-color: #fff;
+    --main-color: #c00;
+    --visit-color: #3ea6ff;
+    --hover-btn: #2e2d2d;
+    --white-hover-btn: #636363;
+    --so-white-hover: #7c7c7c;
+
+    --transition-hover: 0.2s;
+    --text-opacity: 0.75;
+    --visible-border-radius: 22px;
+}
+
+.material-symbols-outlined {
+    color: var(--white-color);
+    font-weight: 100;
+}
+
+// for scroll of body for all page
+body::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    background-color: transparent;
+}
+body::-webkit-scrollbar-thumb {
+    background-color: #747474;
+    border-radius: 10px;
+}
+
+// for horizontal box with center
+%hori-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+// make the element on the center
+%center-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

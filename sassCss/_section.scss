@@ -1,0 +1,136 @@
+section {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding: 10px;
+    background-color: rgb(0, 243, 81);
+}
+
+.main_show {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .big_show {
+        width: 100%;
+        height: 455px;
+        iframe {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .hashtag_row {
+        width: 100%;
+        overflow-x: auto;
+        a {
+            text-decoration: none;
+            color: var(--visit-color);
+        }
+    }
+
+    .vedio_details {
+        @extend %hori-box;
+        .get_channel {
+            @extend %hori-box;
+            gap: 5px;
+            .image-channel {
+                width: 40px;
+                height: 40px;
+                img {
+                    max-width: 100%;
+                    max-height: 100%;
+                    border-radius: 50%;
+                }
+            }
+            .info-channel {
+                font-size: 13px;
+                color: var(--white-color);
+                #name-channel {
+                    display: block;
+                    margin-bottom: 7px;
+                }
+                #all-subs-channel { opacity: var(--text-opacity);}
+            }
+            .subs-btn-channel {
+                margin-left: 25px;
+                button { background-color: var(--white-color);
+                color: var(--back-color); }
+                &:hover { opacity: 0.85;}
+            }
+        }
+        .takeFor_channel {
+            @extend %hori-box;
+            gap: 5px;
+            .button-channel-main {
+                button {
+                    &:hover {
+                        background-color: var(--white-hover-btn);
+                    }
+                }
+            }
+            .likeno-btn-channel {
+                position: relative;
+                @extend %center-box;
+                button {
+                    border: none;
+                    color: var(--back-color);
+                    background-color: var(--white-hover-btn);
+                    padding: 10px;
+                    transition: var(--transition-hover);
+                    @extend %center-box;
+                    color: var(--white-color);
+                    font: {
+                        size: 12px;
+                        weight: 200;
+                    }
+                    &:hover {
+                        background-color: var(--so-white-hover);
+                    }
+                }
+                button:first-child {
+                    border-radius: 22px 0 0 22px;
+                }
+                button:not(:first-child) {
+                    position: relative;
+                    border-radius: 0 22px 22px 0;
+                    width: 80px;
+                    &::after {
+                        content: "";
+                        background-color: var(--white-color);
+                        position: absolute;
+                        height: 24px;
+                        width: 1px;
+                        left: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+                    }
+                }
+            }
+        }
+
+        // for all buttons of channel
+        .button-channel-main {
+            button {
+                border: none;
+                border-radius: var(--visible-border-radius);
+                color: var(--white-color);
+                padding: 10px;
+                background-color: var(--white-hover-btn);
+                transition: var(--transition-hover);
+                @extend %center-box;
+                font: {
+                    size: 12px;
+                    weight: 200;
+                }
+                &:hover {
+                    background-color: var(--so-white-hover);
+                }
+            }
+        }
+    }
+}
+
+aside {
+    flex: 1;
+}
