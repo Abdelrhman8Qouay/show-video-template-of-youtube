@@ -3,7 +3,7 @@ section {
     flex-direction: row;
     gap: 10px;
     padding: 10px;
-    background-color: rgb(0, 243, 81);
+    background-color: var(--back-color);
 }
 
 .main_show {
@@ -26,7 +26,12 @@ section {
         a {
             text-decoration: none;
             color: var(--visit-color);
+            font-size: 11px;
         }
+    }
+
+    h3 {
+        color: var(--white-color)
     }
 
     .vedio_details {
@@ -37,18 +42,24 @@ section {
             .image-channel {
                 width: 40px;
                 height: 40px;
-                img {
-                    max-width: 100%;
-                    max-height: 100%;
-                    border-radius: 50%;
+                a {
+                    text-decoration: none;
+                    img {
+                        max-width: 100%;
+                        max-height: 100%;
+                        border-radius: 50%;
+                    }
                 }
             }
             .info-channel {
                 font-size: 13px;
                 color: var(--white-color);
                 #name-channel {
+                    text-decoration: none;
+                    color: var(--white-color);
                     display: block;
                     margin-bottom: 7px;
+                    p { margin-bottom: 0.5rem; }
                 }
                 #all-subs-channel { opacity: var(--text-opacity);}
             }
@@ -129,8 +140,117 @@ section {
             }
         }
     }
+
+    .description_channel {
+        padding: 15px;
+        background-color: var(--white-hover-btn);
+        width: 100%;
+        border-radius: var(--visible-border-radius);
+        color: var(--white-color);
+        font-size: 13px;
+        &:hover {background-color: var(--so-white-hover);}
+        &.big:hover {background-color: var(--white-hover-btn);}
+    }
 }
 
 aside {
     flex: 1;
+    padding: 5px;
+    overflow: hidden;
+
+    .btn_serv_videos {
+        width: 100%;
+        overflow: hidden;
+        .content-scroll-btns {
+            overflow: hidden;
+            overflow-x: hidden;
+            @extend %hori-box;
+            gap: 10px;
+            width: max-content;
+            touch-action: pan-y;
+            button {
+                border: none;
+                border-radius: 10px;
+                color: var(--white-color);
+                background-color: var(--white-hover-btn);
+                font-size: 12px;
+                padding: 5px;
+                @extend %center-box;
+                transition: var(--transition-hover);
+                width: max-content;
+
+                &.active {
+                    color: var(--back-color);
+                    background-color: var(--white-color);
+                }
+                &:hover {
+                    background-color: var(--so-white-hover);
+                }
+            }
+        }
+    }
+
+    .suggested_videos {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        .card_item {
+            position: relative;
+            text-decoration: none;
+            color: var(--white-color);
+            @extend %hori-box;
+            gap: 3px;
+            .video-item {
+                width: 100%;
+                height: 100%;
+                iframe {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            a {
+                text-decoration: none;
+                .detail-inf {
+                    width: 100%;
+                    .desc-inf {
+                        width: 100%;
+                        overflow: hidden;
+                        p {
+                            color: var(--white-color);
+                            font-size: 13px;
+                            text-align: justify;
+                            display: -webkit-box;
+                            -webkit-line-clamp: 3;
+                            -webkit-box-orient: vertical;
+                            overflow: hidden;
+                        }
+                    }
+                    #name-channel {
+                        text-decoration: none;
+                        color: var(--white-color);
+                        font-size: 11px;
+                        opacity: var(--text-opacity);
+                    }
+                    // #more-inf {font-size: 11px;}
+                }
+                .get-setting {
+                    position: absolute;
+                    right: 0;
+                    top: 5px;
+                    width: 20px;
+                    height: 20px;
+                    @extend %center-box;
+                    button {
+                        border: none;
+                        background-color: red;
+                        color: var(--white-color);
+                        border-radius: var(--visible-border-radius);
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
 }

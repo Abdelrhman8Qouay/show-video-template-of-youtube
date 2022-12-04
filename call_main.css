@@ -435,7 +435,7 @@ section {
           flex-direction: row;
   gap: 10px;
   padding: 10px;
-  background-color: #00f351;
+  background-color: var(--back-color);
 }
 
 .main_show {
@@ -470,6 +470,11 @@ section {
 .main_show .hashtag_row a {
   text-decoration: none;
   color: var(--visit-color);
+  font-size: 11px;
+}
+
+.main_show h3 {
+  color: var(--white-color);
 }
 
 .main_show .vedio_details .get_channel {
@@ -481,7 +486,11 @@ section {
   height: 40px;
 }
 
-.main_show .vedio_details .get_channel .image-channel img {
+.main_show .vedio_details .get_channel .image-channel a {
+  text-decoration: none;
+}
+
+.main_show .vedio_details .get_channel .image-channel a img {
   max-width: 100%;
   max-height: 100%;
   border-radius: 50%;
@@ -493,8 +502,14 @@ section {
 }
 
 .main_show .vedio_details .get_channel .info-channel #name-channel {
+  text-decoration: none;
+  color: var(--white-color);
   display: block;
   margin-bottom: 7px;
+}
+
+.main_show .vedio_details .get_channel .info-channel #name-channel p {
+  margin-bottom: 0.5rem;
 }
 
 .main_show .vedio_details .get_channel .info-channel #all-subs-channel {
@@ -580,10 +595,148 @@ section {
   background-color: var(--so-white-hover);
 }
 
+.main_show .description_channel {
+  padding: 15px;
+  background-color: var(--white-hover-btn);
+  width: 100%;
+  border-radius: var(--visible-border-radius);
+  color: var(--white-color);
+  font-size: 13px;
+}
+
+.main_show .description_channel:hover {
+  background-color: var(--so-white-hover);
+}
+
+.main_show .description_channel.big:hover {
+  background-color: var(--white-hover-btn);
+}
+
 aside {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  padding: 5px;
+  overflow: hidden;
+}
+
+aside .btn_serv_videos {
+  width: 100%;
+  overflow: hidden;
+}
+
+aside .btn_serv_videos .content-scroll-btns {
+  overflow: hidden;
+  overflow-x: hidden;
+  gap: 10px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  -ms-touch-action: pan-y;
+      touch-action: pan-y;
+}
+
+aside .btn_serv_videos .content-scroll-btns button {
+  border: none;
+  border-radius: 10px;
+  color: var(--white-color);
+  background-color: var(--white-hover-btn);
+  font-size: 12px;
+  padding: 5px;
+  -webkit-transition: var(--transition-hover);
+  transition: var(--transition-hover);
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+aside .btn_serv_videos .content-scroll-btns button.active {
+  color: var(--back-color);
+  background-color: var(--white-color);
+}
+
+aside .btn_serv_videos .content-scroll-btns button:hover {
+  background-color: var(--so-white-hover);
+}
+
+aside .suggested_videos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+aside .suggested_videos .card_item {
+  position: relative;
+  text-decoration: none;
+  color: var(--white-color);
+  gap: 3px;
+}
+
+aside .suggested_videos .card_item .video-item {
+  width: 100%;
+  height: 100%;
+}
+
+aside .suggested_videos .card_item .video-item iframe {
+  width: 100%;
+  height: 100%;
+}
+
+aside .suggested_videos .card_item a {
+  text-decoration: none;
+}
+
+aside .suggested_videos .card_item a .detail-inf {
+  width: 100%;
+}
+
+aside .suggested_videos .card_item a .detail-inf .desc-inf {
+  width: 100%;
+  overflow: hidden;
+}
+
+aside .suggested_videos .card_item a .detail-inf .desc-inf p {
+  color: var(--white-color);
+  font-size: 13px;
+  text-align: justify;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+aside .suggested_videos .card_item a .detail-inf #name-channel {
+  text-decoration: none;
+  color: var(--white-color);
+  font-size: 11px;
+  opacity: var(--text-opacity);
+}
+
+aside .suggested_videos .card_item a .get-setting {
+  position: absolute;
+  right: 0;
+  top: 5px;
+  width: 20px;
+  height: 20px;
+}
+
+aside .suggested_videos .card_item a .get-setting button {
+  border: none;
+  background-color: red;
+  color: var(--white-color);
+  border-radius: var(--visible-border-radius);
+  width: 100%;
+  height: 100%;
 }
 
 * {
@@ -592,6 +745,10 @@ aside {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: Roboto, Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 :root {
@@ -623,7 +780,7 @@ body::-webkit-scrollbar-thumb {
   border-radius: 10px;
 }
 
-.main_show .vedio_details, .main_show .vedio_details .get_channel, .main_show .vedio_details .takeFor_channel {
+.main_show .vedio_details, .main_show .vedio_details .get_channel, .main_show .vedio_details .takeFor_channel, aside .btn_serv_videos .content-scroll-btns, aside .suggested_videos .card_item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -639,7 +796,7 @@ body::-webkit-scrollbar-thumb {
           align-items: center;
 }
 
-.main_show .vedio_details .takeFor_channel .likeno-btn-channel, .main_show .vedio_details .takeFor_channel .likeno-btn-channel button, .main_show .vedio_details .button-channel-main button {
+.main_show .vedio_details .takeFor_channel .likeno-btn-channel, .main_show .vedio_details .takeFor_channel .likeno-btn-channel button, .main_show .vedio_details .button-channel-main button, aside .btn_serv_videos .content-scroll-btns button, aside .suggested_videos .card_item a .get-setting {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
