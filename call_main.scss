@@ -6,6 +6,8 @@
 
 
 // the main css for all
+$dirHtml: "rtl";
+
 * {
     padding: 0;
     margin: 0;
@@ -15,10 +17,12 @@
 
 html {
     scroll-behavior: smooth;
+    direction: $dirHtml;
 }
 
 :root {
     --back-color: #0f0f0f;
+    --transp-back-color: #1a1a1abe;
     --white-color: #fff;
     --main-color: #c00;
     --visit-color: #3ea6ff;
@@ -31,9 +35,14 @@ html {
     --visible-border-radius: 22px;
 }
 
-.material-symbols-outlined {
+.material-symbols-outlined, .material-icons {
     color: var(--white-color);
     font-weight: 100;
+    fill: var(--white-color);
+    height: 20px;
+    width: 30px;
+    stroke-width: 1px;
+    stroke: var(--white-color);
 }
 
 // for scroll of body for all page

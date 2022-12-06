@@ -39,7 +39,6 @@
                     &:hover {
                         background-color: var(--hover-btn);
                     }
-
                     a {
                         text-decoration: none;
                         display: flex;
@@ -56,6 +55,20 @@
                                 display: inline-block;
                                 color: var(--white-color);
                                 font-size: 13px;
+                                margin-bottom: -6px;
+                                white-space: nowrap;
+                                overflow: hidden;
+                                width: 168px;
+                                position: relative;
+                                &::before {
+                                    content: "";
+                                    position: absolute;
+                                    right: 0;
+                                    top: 0;
+                                    height: 100%;
+                                    width: 35px;
+                                    background: linear-gradient(to right, transparent, var(--back-color));
+                                }
                             }
                         }
                         svg {
@@ -74,6 +87,9 @@
                                 border-radius: 50%;
                             }
                         }
+                    }
+                    &:hover a .text_para p::before {
+                        background: linear-gradient(to right, transparent, var(--hover-btn));
                     }
                 }
                 .privacy_policy {
